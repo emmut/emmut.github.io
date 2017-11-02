@@ -1,0 +1,300 @@
+body {
+  margin: auto;
+  overflow-x: hidden;
+}
+
+body, html {
+    height: 100%;
+    background-color: #ddd;
+}
+
+article {
+  background-color: green;
+  display: inline-block;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6, p {font-family: "Helvetica Neue";}
+h1 {font-size: 5em;}
+h2 {
+  font-size: 4em;
+  padding: 1.5% 0 1% 0;
+}
+h3 {font-size: 3em;}
+h4 {font-size: 2em;}
+h5 {font-size: 1em;}
+h6 {font-size: .5em;}
+p {font-size: .8em;}
+
+@media screen and (max-width: 400px) {
+  h2 {
+    font-size: 2.5em;
+    text-align: center;
+  }
+}
+
+.about img {
+  width: 100px;
+}
+
+/* Header */
+#logo {
+  width: 100px;
+  height: 100px;
+  background-color: pink;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  -ms-transform: translate(-50%, 0);
+  z-index: 1;
+}
+
+#header {
+  max-height: 60vw;
+  overflow: hidden;
+  position: relative;
+}
+
+#header.parallax {
+    background-image: url("../img/lake-mckenzie2_opt.jpg");
+    height: 60vw;
+    background-attachment: fixed;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#header i.fa.fa-angle-down {
+  position: absolute;
+  bottom: 2.5%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  -ms-transform: translate(-50%, 0);
+  z-index: 999;
+  font-size: 7vw;
+  color: #fff;
+
+}
+
+@media screen and (max-width: 1000px) {
+  #header.parallax {
+      background-size: contain;
+  }
+}
+/*
+button.slick-prev.slick-arrow {
+  z-index: 999;
+} */
+
+.slick-prev:before,
+.slick-next:before,
+.slick-dots li button:before,
+.slick-dots li.slick-active button:before {
+  color: red;
+  font-size: 110%;
+}
+
+/* Navigation */
+
+#main-nav {
+  height: 40px;
+  display: flex;
+  align-items: space-between;
+  justify-content: center;
+  position: relative;
+  z-index: 999;
+}
+
+#main-nav ul {
+  display: flex;
+  align-items: center;
+  background-color: #333;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+#main-nav ul li {
+  list-style: none;
+  text-align: center;
+  justify-content: center;
+  flex: 1 1 auto;
+  height: 40px;
+  border-right: 1px solid #555;
+  text-transform: uppercase;
+  font: 1rem 'Helvetica Neue', san-serif;
+  cursor: pointer;
+}
+
+#main-nav ul li:last-child {
+  border: none;
+}
+
+#main-nav ul li a:visited,
+#main-nav ul li a:link {
+  color: white;
+  text-decoration: none;
+  display: inline-block;
+  padding-top: .7rem;
+  vertical-align: middle;
+  height: 100%;
+  width: 100%;
+}
+
+#main-nav ul li:hover,
+#main-nav ul li:active,
+.current {
+  background-color: #444;
+
+}
+nav.nav-fixed {
+  top: 0;
+  position: fixed !important;
+  width: 100%;
+}
+
+.margin-fix {
+  padding-top: 40px;
+}
+
+.fa.fa-bars,
+.fa.fa-times {
+  display: none;
+}
+
+/* Hamburger Nav */
+@media screen and (max-width: 400px) {
+
+  body {
+    background-color: pink;
+  }
+
+  #main-nav.closed ul li {
+    display: none;
+  }
+
+  #main-nav.expand,
+  #main-nav ul.expand,
+  #bars.fa.fa-bars {
+    display: block;
+  }
+
+  .fa.fa-bars,
+  .fa.fa-times {
+    display: inline;
+    color: white;
+    position: absolute;
+    top: 0.5rem;
+    right: 0.7rem;
+    cursor: pointer;
+    font-size: 1.5em;
+  }
+  .fa.fa-bars.off,
+  .fa.fa-times.off {
+    display: none !important;
+  }
+
+  #header i.fa.fa-angle-down{
+    display: none;
+  }
+}
+
+/* General layout */
+.wrapper {
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.wrapper * {
+  box-sizing: border-box;
+}
+section {
+  padding-top: 3%;
+  margin-top: -3%;
+}
+
+
+@media screen and (max-width: 400px) {
+  section {
+    padding-top: 10%;
+    margin-top: -5%;
+  }
+}
+
+
+/* Section 1 - My Work*/
+
+  /* Images */
+  .img-1 {background: url(../img/bunker.jpg)}
+  .img-2 {background: url(../img/qualisters.jpg)}
+  .img-3 {background: url(../img/hötorget.png)}
+  .img-4 {background: url(../img/cumulus-2015.jpg)}
+  .img-5 {background: url(../img/lake-mckenzie2_opt.jpg)}
+  .img-6 {background: url(http://via.placeholder.com/350)}
+  .img-7 {background: url(http://via.placeholder.com/350)}
+
+  .img-1, .img-2, .img-3, .img-4, .img-5, .img-6, .img-7 {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+  }
+
+.my-work {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.work {
+  flex: 1 1 30%;
+  height: 30vw;
+  width: 200px;
+  position: relative;
+}
+
+.work:nth-child(1) {
+  flex: 1 1 100%;
+  height: 60vw;
+}
+
+/* Image Caption */
+.work p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  display: none;
+  color: #fff;
+}
+
+.work:hover p,
+.work:active p {
+  display: inline;
+}
+
+.overlay {
+  display: inline-block;
+  background-color: #000;
+  opacity: 0;
+  height: 100%;
+  width: 100%;
+  transition: 650ms ease;
+}
+
+.work:hover .overlay,
+.work:active .overlay {
+  opacity: 0.5;
+
+}
+
+.work:hover ,
+.work:active {
+
+}
+
+/* Form */
+
+textarea#desc {
+  width: 200px;
+}

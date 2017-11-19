@@ -8,36 +8,65 @@ body, html {
     background-color: #ddd;
 }
 
+* {
+  box-sizing: border-box;
+}
+
+*:focus {
+    outline: none;
+}
+
 article {
-  background-color: green;
   display: inline-block;
 }
 
-/* Typography */
-h1, h2, h3, h4, h5, h6, p {font-family: "Helvetica Neue";}
-h1 {font-size: 5em;}
+/*--------------------------------------------------------------
+# Typography
+--------------------------------------------------------------*/
+
+h1, h2, h3, h4, h5, h6 {font-family: "Oswald", sans-serif;}
+
+h1 {
+  font-size: 5em;
+  text-transform: uppercase;
+}
 h2 {
   font-size: 4em;
-  padding: 1.5% 0 1% 0;
+  padding: 2.5% 0 2% 0;
+  text-transform: uppercase;
 }
-h3 {font-size: 3em;}
+h3 {
+  font-size: 3em;
+  text-transform: uppercase;
+}
 h4 {font-size: 2em;}
 h5 {font-size: 1em;}
 h6 {font-size: .5em;}
-p {font-size: .8em;}
+p {
+  font-size: .8em;
+  font-family: "Raleway", sans-serif;
+  line-height: 1.2rem;
+}
+
+p strong {
+  font-family: "Raleway", sans-serif;
+  font-weight: bold;
+}
 
 @media screen and (max-width: 400px) {
   h2 {
     font-size: 2.5em;
     text-align: center;
   }
+  h3 {
+    font-size: 2em;
+    text-align: center;
+  }
 }
 
-.about img {
-  width: 100px;
-}
-
-/* Header */
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
 #logo {
   width: 100px;
   height: 100px;
@@ -57,7 +86,7 @@ p {font-size: .8em;}
 }
 
 #header.parallax {
-    background-image: url("../img/lake-mckenzie2_opt.jpg");
+    background-image: url("../img/max/lake-mckenzie2_opt.jpg");
     height: 60vw;
     background-attachment: fixed;
     background-position: center top;
@@ -82,21 +111,10 @@ p {font-size: .8em;}
       background-size: contain;
   }
 }
-/*
-button.slick-prev.slick-arrow {
-  z-index: 999;
-} */
 
-.slick-prev:before,
-.slick-next:before,
-.slick-dots li button:before,
-.slick-dots li.slick-active button:before {
-  color: red;
-  font-size: 110%;
-}
-
-/* Navigation */
-
+/*--------------------------------------------------------------
+# Navigation
+--------------------------------------------------------------*/
 #main-nav {
   height: 40px;
   display: flex;
@@ -123,7 +141,7 @@ button.slick-prev.slick-arrow {
   height: 40px;
   border-right: 1px solid #555;
   text-transform: uppercase;
-  font: 1rem 'Helvetica Neue', san-serif;
+  font: 1rem 'Oswald', san-serif;
   cursor: pointer;
 }
 
@@ -136,7 +154,7 @@ button.slick-prev.slick-arrow {
   color: white;
   text-decoration: none;
   display: inline-block;
-  padding-top: .7rem;
+  padding-top: .5rem;
   vertical-align: middle;
   height: 100%;
   width: 100%;
@@ -163,12 +181,10 @@ nav.nav-fixed {
   display: none;
 }
 
-/* Hamburger Nav */
+/*--------------------------------------------------------------
+## Hamburger nav
+--------------------------------------------------------------*/
 @media screen and (max-width: 400px) {
-
-  body {
-    background-color: pink;
-  }
 
   #main-nav.closed ul li {
     display: none;
@@ -200,7 +216,9 @@ nav.nav-fixed {
   }
 }
 
-/* General layout */
+/*--------------------------------------------------------------
+# General layouts
+--------------------------------------------------------------*/
 .wrapper {
   max-width: 90%;
   margin: 0 auto;
@@ -210,35 +228,124 @@ nav.nav-fixed {
   box-sizing: border-box;
 }
 section {
-  padding-top: 3%;
-  margin-top: -3%;
+  padding-top: 10%;
+  margin-top: -5%;
 }
 
+@media screen and (min-width: 900px) {
+  section {
+    padding-top: 2%;
+    margin-top: 1%;
+  }
+}
+
+section>h2,
+section>h3,
+section>h4 {
+  padding-bottom: 0.5rem;
+}
+
+.clear-fix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+/*--------------------------------------------------------------
+# Section 1 - My Work
+--------------------------------------------------------------*/
+/*--- Image slider ---*/
+.slick-slider {
+  overflow: hidden;
+}
+
+.slider-nav .slick-track img {
+  filter: brightness(0.4);
+  transition: filter 200ms ease-in-out;
+}
+
+.slider-nav .slick-center.slick-center img {
+  filter: none;
+}
+
+.slick-slider .slick-list, .slick-slider .slick-track {
+  height: 100%;
+}
+
+.slider-for .slick-current {
+  height: auto;
+}
+
+.slick-dotted.slick-slider {
+  margin: 0;
+}
+
+.slider-nav {
+  height: 20vw;
+}
+
+.slider-nav img {
+  object-fit: cover;
+  height: 100%;
+}
+
+.slick-slide img {
+  margin: auto;
+  width: 100%;
+}
+
+.slick-arrow {
+  z-index: 100;
+}
+
+.slick-next {
+  right: 25px;
+}
+
+.slick-prev {
+  left: 25px;
+}
+
+ul.slick-dots {
+  bottom: 10px;
+}
+
+ul.slick-dots li button:before,
+ul.slick-dots li.slick-active button:before {
+  color: white;
+}
 
 @media screen and (max-width: 400px) {
-  section {
-    padding-top: 10%;
-    margin-top: -5%;
+  .slick-next:before,
+  .slick-prev:before,
+  .slick-arrow,
+  ul.slick-dots li button:before,
+  ul.slick-dots li.slick-active button:before,
+  ul.slick-dots {
+    display: none;
+    pointer-events: none;
   }
+
 }
 
+/*--------------------------------------------------------------
+## My work more
+--------------------------------------------------------------*/
+/*--- Images ---*/
+.img-1 {background: url(../img/max/nils2.png)}
+.img-2 {background: url(../img/min/q.jpg)}
+.img-3 {background: url(../img/min/qualisters.jpg)}
+.img-4 {background: url(../img/min/snygg.jpg)}
+.img-5 {background: url(../img/min/möggen.jpg)}
+.img-6 {background: url(../img/min/cumulus-2016.jpg)}
+.img-7 {background: url(../img/min/cumulus-2015.jpg)}
 
-/* Section 1 - My Work*/
-
-  /* Images */
-  .img-1 {background: url(../img/bunker.jpg)}
-  .img-2 {background: url(../img/qualisters.jpg)}
-  .img-3 {background: url(../img/hötorget.png)}
-  .img-4 {background: url(../img/cumulus-2015.jpg)}
-  .img-5 {background: url(../img/lake-mckenzie2_opt.jpg)}
-  .img-6 {background: url(http://via.placeholder.com/350)}
-  .img-7 {background: url(http://via.placeholder.com/350)}
-
-  .img-1, .img-2, .img-3, .img-4, .img-5, .img-6, .img-7 {
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-  }
+.img-1, .img-2, .img-3, .img-4, .img-5, .img-6, .img-7 {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
 
 .my-work {
   display: flex;
@@ -257,7 +364,7 @@ section {
   height: 60vw;
 }
 
-/* Image Caption */
+/*--- Image Caption ---*/
 .work p {
   position: absolute;
   top: 50%;
@@ -293,8 +400,192 @@ section {
 
 }
 
-/* Form */
+/*--------------------------------------------------------------
+# Section 2 - About me
+--------------------------------------------------------------*/
+#about .text {
+  float: left;
+  max-width: 70%;
+  padding-right: 0.5rem;
+}
+#about .text p {
+  margin-bottom: 1rem;
+}
 
-textarea#desc {
-  width: 200px;
+#about .img-wrapper {
+  display: inline-block;
+  position: relative;
+	width: 30%;
+  float: right;
+  border-radius: 50%;
+  overflow: hidden;s
+}
+#about .img-wrapper:before {
+  content: "";
+	display: block;
+	padding-top: 100%; 	/* initial ratio of 1:1*/
+}
+
+#about img {
+  position: absolute;
+	top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  margin: auto;
+  width: 116%;
+}
+
+
+/*--------------------------------------------------------------
+# Section 3 - Resumé
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+# Section 4 - Hire me
+--------------------------------------------------------------*/
+/* Typography */
+
+#hire-form {
+  max-width: 600px;
+  margin: auto;
+  padding: 5% 0 5% 0;
+  position: relative;
+}
+
+#hire p {
+  position: relative;
+}
+
+#hire p label:first-child {
+  font-size: 1rem;
+  line-height: 30px;
+}
+
+#hire p:nth-child(1),
+#hire p:nth-child(2) {
+  margin-bottom: 3rem;
+}
+
+#hire p:last-child {
+
+}
+
+#textarea_feedback {
+  font: 0.6rem "Oswald", sans-serif;
+  color: #444;
+  display: inline;
+  text-align: right;
+}
+
+#hire p input,
+#hire p textarea {
+  font: .7rem "Raleway", sans-serif;
+  float: right;
+  width: 70%;
+  height: 2rem;
+  border-radius: 20px;
+  border: none;
+  padding: 0 5% 0 5%;
+}
+#hire p input::placeholder,
+#hire p textarea::placeholder {
+  font-family: "Raleway", sans-serif;
+  color: #777;
+}
+
+#hire p textarea {
+  padding: 9px 5% 5% 5%;
+  resize: none;
+  min-height: 100px;
+}
+
+#hire p label.error,
+#hire p label.error {
+  color: #D01E32;
+}
+
+#hire p input.error,
+#hire p textarea.error {
+  border: 1px solid #D01E32;
+  background-color: #DF8D95;
+}
+#hire p input.error::placeholder,
+#hire p textarea.error::placeholder {
+  color: #444;
+}
+
+#hire p label.error {
+  position: absolute;
+  right: 15px;
+  bottom: 33px;
+}
+
+#hire .buttons {
+  margin: auto;
+  clear: both;
+  float: right;
+  margin-top: 5%;
+}
+
+#hire .button {
+  font-family: 12px 'Oswald', Arial, sans-serif;
+  margin: 10px auto;
+  border-radius: 15px;
+  background-color: #E9E9E9;
+  width: 100px;
+  height: 28px;
+  line-height: 100%;
+  text-align: center;
+  color: #666;
+  border: 0px solid ;
+  -webkit-appearance: none;
+}
+
+#hire .btn-success:hover {
+  background: rgb(28, 184, 65);
+  color: white;
+}
+
+#hire .btn-success:active {
+  background: RGB(28, 155, 65);
+
+}
+
+#hire .btn-error:hover {
+  background: rgb(202, 60, 60);
+  color: white;
+}
+
+#hire .btn-error:active {
+  background: RGB(172, 60, 60);
+}
+
+#hire .required {
+  color: rgb(202, 60, 60);
+}
+
+#textarea_feedback.hide-ta {
+  display: none !important;
+}
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+footer {
+  background-color: #333;
+  width: 100%;
+  margin-top: 0.5rem;
+  padding: 5%;
+}
+
+footer ul {
+  border-bottom: 1px solid #999;
+  padding-bottom: 0.5rem;
+}
+
+footer ul li a {
+  font: 0.65rem "Raleway", sans-serif;
+  color: #999;
+  text-decoration: none;
 }

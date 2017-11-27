@@ -418,7 +418,7 @@ ul.slick-dots li.slick-active button:before {
 	width: 30%;
   float: right;
   border-radius: 50%;
-  overflow: hidden;s
+  overflow: hidden;
 }
 #about .img-wrapper:before {
   content: "";

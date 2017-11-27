@@ -27,27 +27,8 @@ $(document).ready(function() {
 		});
 
     $('#clearform').on('click', function () {
-        $(this).val('');
+        $('#message').val('');
         $("#hire-form").validate().resetForm();
      });
-
- 		$("#hire-form").submit(function(event) {
- 			form = $("#hire-form");
- 			values = form.serialize();
- 			$.ajax({
- 				url: form.attr("action"),
- 				type: "post",
- 				data: values,
- 				dataType: "json",
- 				success: function(response) {
- 					$("#feedback").html("<p>Thank you for submitting </p>" + response.name + "!</p>");
- 				},
- 				error: function(jqXHR, textStatus, errorThrown) {
- 					console.log(textStatus, errorThrown);
- 					$("#feedback").html("<p>There was an error</p>");
- 				}
- 			});
- 			event.preventDefault();
- 		})
 
 });

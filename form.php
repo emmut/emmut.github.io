@@ -1,11 +1,11 @@
 <?php
 
-print_r($_POST);
+if(isset($_POST)){
 
-
-  $name = $_POST['name'];
-  $email = $_POST['email'];
-
-
-  $result = array("name"=>$name, "data" => $_POST);
+  $result = array("data" => $_POST);
   echo json_encode($result);
+
+} else {
+  error;
+}
+?>

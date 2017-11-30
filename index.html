@@ -221,7 +221,7 @@
     <script src="js/script.js"></script>
     <script src="js/validate.js"></script>
 
-    <script type="text/javascript">
+    <!-- <script type="text/javascript">
       $("#hire-form").submit(function(event) {
         form = $("#hire-form");
         values = form.serialize();
@@ -231,7 +231,7 @@
           data: values,
           dataType: "json",
           success: function(response) {
-            $("#feedback").html("<p>Thank you for submitting </p>" + response.name + "!</p>");
+            $("#feedback").html("<p>Thank you for submitting " + response.data.name + "!</p>");
           },
           error: function(jqXHR, textStatus, errorThrown) {
             console.log(textStatus, errorThrown);
@@ -240,6 +240,6 @@
         });
       event.preventDefault();
     })
-    </script>
+    </script> -->
   </body>
 </html>

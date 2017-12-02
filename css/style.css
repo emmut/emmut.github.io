@@ -1,11 +1,15 @@
+/*--------------------------------------------------------------
+# Generella stilar
+--------------------------------------------------------------*/
+
 body {
   margin: auto;
   overflow-x: hidden;
 }
 
 body, html {
-    height: 100%;
-    background-color: #ddd;
+  height: 100%;
+  background-color: #ddd;
 }
 
 * {
@@ -13,17 +17,69 @@ body, html {
 }
 
 *:focus {
-    outline: none;
+  outline: none;
 }
 
 article {
   display: inline-block;
 }
 
+/*
+  En wrapper för att hålla innehålles berdd till max 90%
+*/
+.wrapper {
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.wrapper * {
+  box-sizing: border-box;
+}
+
+/*
+  Mellanrum för de olika sektionerna. Paddingen och marginen motverkar varandra, detta för att juster vart onePageNav ska skrolla till
+*/
+section {
+  padding-top: 10%;
+  margin-top: -5%;
+  margin-bottom: 3rem;
+}
+section:last-child {
+  margin-bottom: 10rem;
+}
+
+/*
+  Justerar mellanrummet på mindre skärmar
+*/
+@media screen and (min-width: 900px) {
+  section {
+    padding-top: 2%;
+    margin-top: 1%;
+  }
+}
+
+section>h2,
+section>h3,
+section>h4 {
+  padding-bottom: 0.5rem;
+}
+
+/*
+  En clear fix som används på ett flertalställen
+*/
+.clear-fix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
 /*--------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/
-
+/*
+  Här sätter jag typografin för hela sidan, några specifika finjusteringar längre ned
+*/
 h1, h2, h3, h4, h5, h6 {font-family: "Oswald", sans-serif;}
 
 h1 {
@@ -52,13 +108,18 @@ p strong {
   font-family: "Raleway", sans-serif;
   font-weight: bold;
 }
-
+/*
+Behövdes för att alla label-taggar inte kunde vara i en p-tagg
+*/
 label {
   font-size: .8rem;
   font-family: "Raleway", sans-serif;
   line-height: 1.2rem;
 }
 
+/*
+Sätter typsnittsgraden lägre och har centrerat texteb på enheter med mindre skärm
+*/
 @media screen and (max-width: 400px) {
   h2 {
     font-size: 2.5em;
@@ -69,10 +130,12 @@ label {
     text-align: center;
   }
 }
-
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
+/*
+  I den här sektionen sätter jag stilarna logotypen, header-bilden och pilen (som tar en ned till första sektionen)
+*/
 #logo {
   width: 100px;
   height: 100px;
@@ -85,12 +148,18 @@ label {
   z-index: 1;
 }
 
+/*
+  Headerbildens höjd är 60% av webbläsarens bredd
+*/
 #header {
   max-height: 60vw;
   overflow: hidden;
   position: relative;
 }
 
+/*
+  Headerbilden är satt med CSS och är fixerad för att skapa en parallax-effekt
+*/
 #header.parallax {
     background-image: url("../img/max/lake-mckenzie2_opt.jpg");
     height: 60vw;
@@ -98,7 +167,6 @@ label {
     background-position: center top;
     background-repeat: no-repeat;
     background-size: cover;
-
 }
 
 #header i.fa.fa-angle-down {
@@ -113,6 +181,9 @@ label {
 
 }
 
+/*
+  Jag switchar bilden till contain, istället för cover för att bilden ska synas bättre på enheter med mindre skärmar
+*/
 @media screen and (max-width: 1000px) {
   #header.parallax {
       background-size: contain;
@@ -122,12 +193,15 @@ label {
 /*--------------------------------------------------------------
 # Navigation
 --------------------------------------------------------------*/
+/*
+  Här stylar jag huvudnavigeringen. Den är gjord med hjälp av en flexbox
+*/
 #main-nav {
   height: 40px;
   display: flex;
   justify-content: center;
   position: relative;
-  z-index: 999;
+  z-index: 999; /* Högt z-index så att menyn alltid är överst */
 }
 
 #main-nav ul {
@@ -155,6 +229,9 @@ label {
   border: none;
 }
 
+/*
+  Är medveten om att a skulle funka lika bra som a:link, det är mest för ordningens skull
+*/
 #main-nav ul li a:visited,
 #main-nav ul li a:link {
   color: white;
@@ -166,22 +243,35 @@ label {
   width: 100%;
 }
 
+/*
+  Sätter färgen för :hover, :active, .current(för onepagenav) till samma
+*/
 #main-nav ul li:hover,
 #main-nav ul li:active,
 .current {
   background-color: #444;
 
 }
+
+/*
+  .nav-fixed läggs till med hjälp av ett javascript
+*/
 nav.nav-fixed {
   top: 0;
   position: fixed !important;
   width: 100%;
 }
 
+/*
+  .margin-fix läggs till med hjälp av ett javasvript, och kompenserar för den yta som försvinner när menyn går från relative till fixed
+*/
 .margin-fix {
   padding-top: 40px;
 }
 
+/*
+  Läggs till och tas bort med javascript när man klickar på ikonen i hamburgermenyn på skärmar mindre än 400px
+*/
 .fa.fa-bars,
 .fa.fa-times {
   display: none;
@@ -190,12 +280,18 @@ nav.nav-fixed {
 /*--------------------------------------------------------------
 ## Hamburger nav
 --------------------------------------------------------------*/
+/*
+  Stilar som gäller för skärmar mindre än 400px, en hamburgermeny
+*/
 @media screen and (max-width: 400px) {
 
   #main-nav.closed ul li {
     display: none;
   }
 
+  /*
+    .expand läggs till och tas bort med javascript för att öppna och stänga menyn
+  */
   #main-nav.expand,
   #main-nav ul.expand,
   #bars.fa.fa-bars {
@@ -217,59 +313,28 @@ nav.nav-fixed {
     display: none !important;
   }
 
+  /*
+    Tar bort pilen på mindre skärmar då den kändes överflödig (bilden täcker ändå inte hela skärmen)
+  */
   #header i.fa.fa-angle-down{
     display: none;
   }
 }
 
 /*--------------------------------------------------------------
-# General layouts
---------------------------------------------------------------*/
-.wrapper {
-  max-width: 90%;
-  margin: 0 auto;
-}
-
-.wrapper * {
-  box-sizing: border-box;
-}
-section {
-  padding-top: 10%;
-  margin-top: -5%;
-  margin-bottom: 3rem;
-}
-section:last-child {
-  margin-bottom: 10rem;
-}
-
-@media screen and (min-width: 900px) {
-  section {
-    padding-top: 2%;
-    margin-top: 1%;
-  }
-}
-
-section>h2,
-section>h3,
-section>h4 {
-  padding-bottom: 0.5rem;
-}
-
-.clear-fix:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-
-/*--------------------------------------------------------------
 # Section 1 - My Work
 --------------------------------------------------------------*/
+/*
+  Stilar för första sektionen. Börjar med justeringar av slick sliders egna css
+*/
 /*--- Image slider ---*/
 .slick-slider {
   overflow: hidden;
 }
 
+/*
+  .slick-track och .slick-nav är för bilderna som ligger ovanför huvudbilden - navigeringsslidern
+*/
 .slider-nav .slick-track img {
   filter: brightness(0.4);
   transition: filter 200ms ease-in-out;
@@ -283,6 +348,9 @@ section>h4 {
   height: 100%;
 }
 
+/*
+  .slick-current är för bilden som just nu visas
+*/
 .slider-for .slick-current {
   height: auto;
 }
@@ -326,6 +394,9 @@ ul.slick-dots li.slick-active button:before {
   color: white;
 }
 
+/*
+  Tar bort navigeringspilarna på enheter med mindre skärmar. Man kan fortfarande klicka, svepa och dra bilderna för att navigera (passar bättre för små skärmar)
+*/
 @media screen and (max-width: 400px) {
   .slick-next:before,
   .slick-prev:before,
@@ -334,7 +405,10 @@ ul.slick-dots li.slick-active button:before {
   ul.slick-dots li.slick-active button:before,
   ul.slick-dots {
     display: none;
-    pointer-events: none;
+    pointer-events: none; /* Så man kan klicka på det som är bakom pilarna
+
+    OBS! Ger ett error i validatorn, se rapporten
+    */
   }
 
 }
@@ -342,6 +416,10 @@ ul.slick-dots li.slick-active button:before {
 /*--------------------------------------------------------------
 ## My work more
 --------------------------------------------------------------*/
+
+/*
+  Lägger till bilder i bildgalleriet. Skapad med hjälp av flexbox
+*/
 /*--- Images ---*/
 .img-1 {background: url(../img/max/nils2.png)}
 .img-2 {background: url(../img/min/q.jpg)}
@@ -362,6 +440,9 @@ ul.slick-dots li.slick-active button:before {
   flex-wrap: wrap;
 }
 
+/*
+  Alla bilder tar upp 1/3 av bredden...
+*/
 .work {
   flex: 1 1 30%;
   height: 30vw;
@@ -369,6 +450,9 @@ ul.slick-dots li.slick-active button:before {
   position: relative;
 }
 
+/*
+  ...föutom första bilden som är större
+*/
 .work:nth-child(1) {
   flex: 1 1 100%;
   height: 60vw;
@@ -385,11 +469,17 @@ ul.slick-dots li.slick-active button:before {
   color: #fff;
 }
 
+/*
+  Visar bildtexten på hovrar eller klickar på en mobil
+*/
 .work:hover p,
 .work:active p {
   display: inline;
 }
 
+/*
+  En bildtextens bakgrund...
+*/
 .overlay {
   display: inline-block;
   background-color: #000;
@@ -399,20 +489,22 @@ ul.slick-dots li.slick-active button:before {
   transition: 650ms ease;
 }
 
+/*
+  ...som animeras in
+*/
 .work:hover .overlay,
 .work:active .overlay {
   opacity: 0.5;
 
 }
 
-.work:hover ,
-.work:active {
-
-}
-
 /*--------------------------------------------------------------
 # Section 2 - About me
 --------------------------------------------------------------*/
+
+/*
+  Vänsterställer texten...
+*/
 #about .text {
   float: left;
   max-width: 70%;
@@ -422,6 +514,9 @@ ul.slick-dots li.slick-active button:before {
   margin-bottom: 1rem;
 }
 
+/*
+  ...och högerställer texten med floating. Här används en clearfixen
+*/
 #about img {
   position: relative;
   width: 30%;
@@ -434,6 +529,10 @@ ul.slick-dots li.slick-active button:before {
 /*--------------------------------------------------------------
 # Section 3 - Resumé
 --------------------------------------------------------------*/
+
+/*
+  Diagrammet. En wrapper för alla staplar
+*/
 #resume .bar-wrapper {
   width: 100%;
   display: flex;
@@ -446,19 +545,30 @@ ul.slick-dots li.slick-active button:before {
   width: 50px;
   transition: height 700ms ease-in-out;
 }
-
+/*
+  Alla staplar har en klass för respektive program och en gemensam klass (.bar)
+*/
 #resume .photoshop {
   background-color: #5DD1FA;
   background-image: url(../img/adobe/photoshop.svg);
+  /* Repeat, position och size kunde gjorts inline, men tycker det är lite bökigt */
   background-repeat: no-repeat;
   background-position: bottom;
   background-size: 70%;
   height: 0;
-  border-bottom: 7px solid #5DD1FA;
+  border-bottom: 7px solid #5DD1FA; /* En fix så att bilden inte hamnar länst ned i stapeln och att något ska finnas på plats innan staplarna är inanimerade*/
 }
+
+/*
+  .anim-height läggs till med javacript för att animera höjden
+*/
 #resume .photoshop.anim-height {
-  height: calc(250px * .9)
+  height: calc(250px * .9) /* Använde calc() för att lätt kunna ändra höjden på staplarna i efterhand */
 }
+
+/*
+  Sen återupprepas allt för varje stapel
+*/
 #resume .illustrator {
   background-color: #F19737;
   background-image: url(../img/adobe/illustrator.svg);
@@ -544,9 +654,15 @@ ul.slick-dots li.slick-active button:before {
   height: calc(250px * .3);
 }
 
+/*
+  Lite CSS för beskrivningen
+*/
 #resume p {
   margin-bottom: 1rem;
 }
+/*
+  Två-kolumnslayout på mindre större skärmar
+*/
 @media screen and (min-width: 700px) {
   #resume p {
     width: 50%;
@@ -563,8 +679,9 @@ ul.slick-dots li.slick-active button:before {
 /*--------------------------------------------------------------
 # Section 4 - Hire me
 --------------------------------------------------------------*/
-/* Typography */
-
+/*
+  Formuläret
+*/
 #hire-form {
   max-width: 600px;
   margin: 2rem auto 1rem auto;
@@ -586,13 +703,18 @@ ul.slick-dots li.slick-active button:before {
   margin-bottom: 3rem;
 }
 
+/*
+  Textruta för antal bokstäver i textarean
+*/
 #textarea_feedback {
   font: 0.6rem "Oswald", sans-serif;
   color: #444;
   display: inline;
   text-align: right;
 }
-
+/*
+  Fick inte ha en textarea i en p-tagg, så fick lägga den i div.ta
+*/
 #hire p input,
 #hire .ta textarea {
   font: .7rem "Raleway", sans-serif;
@@ -603,6 +725,10 @@ ul.slick-dots li.slick-active button:before {
   border: none;
   padding: 0 5% 0 5%;
 }
+
+/*
+  Border-radius är 0 för att textarea och #subject ska flyta ihop till en
+*/
 #hire p input[id="subject"] {
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
@@ -611,8 +737,9 @@ ul.slick-dots li.slick-active button:before {
   border-top-right-radius: 0;
   border-top-left-radius: 0;
 }
-#hire p input::placeholder,
-#hire .ta textarea::placeholder {
+
+#hire p input:placeholder-shown,
+#hire .ta textarea:placeholder-shown {
   font-family: "Raleway", sans-serif;
   color: #777;
 }
@@ -639,10 +766,13 @@ ul.slick-dots li.slick-active button:before {
   margin-top: 1rem;
   margin-right: .3rem;
 }
+
+/*
+  Färger om valideringen inte går igenom
+*/
 #hire input[type="checkbox"].error {
   outline: 1px solid #D01E32;
 }
-
 
 #hire p label.error,
 #hire .ta label.error {
@@ -654,8 +784,8 @@ ul.slick-dots li.slick-active button:before {
   border: 1px solid #D01E32;
   background-color: #DF8D95;
 }
-#hire p input.error::placeholder,
-#hire .ta textarea.error::placeholder {
+#hire p input.error:placeholder-shown,
+#hire .ta textarea.error:placeholder-shown {
   color: #444;
 }
 
@@ -687,6 +817,9 @@ ul.slick-dots li.slick-active button:before {
   -webkit-appearance: none;
 }
 
+/*
+  Stilar för submit- och reset-knapparna
+*/
 #hire .btn-success:hover {
   background: rgb(28, 184, 65);
   color: white;
@@ -710,10 +843,16 @@ ul.slick-dots li.slick-active button:before {
   color: rgb(202, 60, 60);
 }
 
+/*
+  Gömmer och visar antalbokstäver i textarea
+*/
 #textarea_feedback.hide-ta {
-  display: none !important;
+  display: none;
 }
 
+/*
+  Text när man väl skickat formuläret
+*/
 #feedback p {
   text-align: center;
 }
@@ -721,6 +860,10 @@ ul.slick-dots li.slick-active button:before {
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
+
+/*
+  Stilar för footern
+*/
 footer {
   background-color: #333;
   width: 100%;

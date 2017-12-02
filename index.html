@@ -2,28 +2,48 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <!-- Ingen zoom på mobila skärmar-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Portfolio</title>
+    <!-- Länk till slick sliders egen css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css">
+    <!-- Länk till slick sliders eget tema -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css">
+    <!-- Länk till typsnitt från google fonts -->
     <link href="https://fonts.googleapis.com/css?family=Oswald%7CRaleway:400,700" rel="stylesheet">
+    <!-- Länk till egen css och css-reset -->
     <link rel="stylesheet" type="text/css" href="css/reset.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <!-- Skript för att #textarea_feedback ska visas och gömmas (se #hire) -->
+    <script>
+      removeHide = function() {
+        $('#textarea_feedback').removeClass('hide-ta');
+      }
+
+      addHide = function(){
+        $('#textarea_feedback').addClass('hide-ta');
+      };
+  </script>
   </head>
   <body>
 
+  <!-- Header bilden -->
   <div id="header" class="parallax">
+    <!-- Hemsidans logotyp -->
     <div id="logo">
       <img src="http://via.placeholder.com/100x100" alt="">
     </div>
 
+    <!-- Pil som tar en ned till innehållet -->
     <span id="arrow"><a href="#my-work"><i class="fa fa-angle-down" aria-hidden="true"></i></a></span>
 
   </div>
 
-
+  <!-- Global navigeringsmeny -->
   <nav id="main-nav" class="closed">
     <i id="bars" class="fa fa-bars" aria-hidden="true"></i>
+    <!-- class="closed" är till för mobilmenyns öppna/stäng -->
     <ul id="expander" class="closed">
       <li><a href="#header" onclick="$">Home</a></li>
       <li><a href="#my-work">My Work</a></li>
@@ -33,10 +53,13 @@
     </ul>
   </nav>
 
+  <!-- Första sektionen, my work -->
   <div class="wrapper">
     <section id="my-work">
       <h2>My Work</h2>
+      <!-- Slider från slick slider -->
       <div class="slick-wrap">
+        <!-- Slider för navigering -->
         <div class="slider-nav">
           <div>
             <img src="img/thumb/lake-mckenzie2_opt.jpg" alt="Photographic image of a lake">
@@ -63,7 +86,7 @@
             <img src="img/thumb/robo-byronbay.jpg" alt="Photographic montage of a monument in Byron Bay, Australia">
           </div>
         </div>
-
+        <!-- Slider för huvudbild -->
         <div class="slider-for">
           <div>
             <a href="img/max/lake-mckenzie2_opt.jpg">
@@ -109,6 +132,7 @@
       </div>
     </section>
 
+    <!-- Mer bilder i en kolumnlayout med hjälp av flexbox -->
     <section id="my-work-more">
       <h3>Small projects</h3>
       <div class="my-work">
@@ -157,10 +181,12 @@
       </div>
     </section>
 
+    <!-- En sektion om mig -->
     <section id="about" class="about clear-fix">
       <h2>About Me</h2>
       <div class="text">
 
+        <!-- Text anpassad för skanning -->
         <p>Hello! My name is <strong>Emil</strong>. I’m a student at <strong>Karlstad university</strong> originally from Stockholm, and this is my assignment for web design class. </p>
 
         <p>This is ment to be my <strong>portfolio</strong> for future reference. </p>
@@ -168,13 +194,15 @@
         <p><strong>All the content is made by me.</strong> </p>
 
       </div>
-
+      <!-- Bild på mig -->
       <img src="img/max/emil.jpg" alt="Emil Jansson">
 
     </section>
 
+    <!-- En sektion som handlar om mitt kompentensområde -->
     <section id="resume" class="resume clear-fix">
       <h2>Resumé</h2>
+      <!-- Animerat stapeldiagram -->
       <div class="bar-wrapper">
         <div class="bar bar-1 photoshop"></div>
         <div class="bar bar-2 illustrator"></div>
@@ -185,13 +213,16 @@
         <div class="bar bar-6 photography"></div>
         <div class="bar bar-7 cinematography"></div>
       </div>
+      <!-- Text som förklarar diagramet -->
       <p>This is my competence, visually represented in the bars above. I have been using <strong>Photoshop</strong> for a really long time. In later years I have learnt <strong>Illustrator</strong> and <strong>InDesign</strong>. The latter was used when I was designing for the school paper. My competence have been improved while in school, both from assignments and from spare time practice.</p>
 
       <p>The three bars the farthest to the right represents <strong>web design</strong>, <strong>photography</strong> and <strong>cinematography</strong>. I have been doing quite a lot of photography in the past, but web design and cinematography was completely new to me before starting my studies. </p>
     </section>
 
+    <!-- En sektion för kontakt om anställning -->
     <section id="hire" class="hire">
         <h2>Hire Me</h2>
+        <!-- Formulär -->
         <form id="hire-form" class="clear-fix" action="form.php" method="post">
           <p>
             <label for="name">Name: <span class="required">*</span></label>
@@ -204,11 +235,14 @@
           <div class="ta">
             <p><label for="subject">Message: <span class="required">*</span></label>
             <input type="text" id="subject" name="subject" placeholder="Subject" required></p>
+            <!-- Fick ett error pga onfocusout-attributet i valideringen, valde att ha kvar den för att det var den enda lösningen för att få räknerutan att synas bara när man skriver  -->
             <textarea id="message" name="message" maxlength="500" placeholder="Write about your project..." onKeyPress="removeHide()" onfocusout="addHide()"></textarea>
           </div>
+          <!-- Räkneruta, räknar antal bokstäver i textarean -->
           <div id="textarea_feedback" class="hide-ta"></div>
           <div class="check-box">
             <input id="accept" type="checkbox" name="accept" value="yes">
+            <!-- Det finns inga villkor, mest för att det var krav för uppgiften -->
             <label for="accept">I accept the terms</label>
           </div>
           <div class="buttons">
@@ -221,11 +255,14 @@
   </div>
 
 
-
+  <!-- En footer -->
   <footer id="footer-nav">
     <ul>
+      <!-- Tom länk, för syns skull -->
       <li><a href="#">Terms &amp; Conditions</a></li>
+      <!-- Tom länk, för syns skull -->
       <li><a href="#">License</a></li>
+      <!-- Tom länk, för syns skull -->
       <li><a href="#">Policy</a></li>
       <li><a href="#header">Home</a></li>
       <li><a href="#my-work">My Work</a></li>
@@ -234,14 +271,21 @@
       <li><a href="#hire">Hire Me</a></li>
     </ul>
   </footer>
-
+    <!-- Länk till fontawesome -->
     <script src="https://use.fontawesome.com/df828ed5ce.js"></script>
+    <!-- Länk till jQuery -->
     <script   src="https://code.jquery.com/jquery-3.2.1.min.js"   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="   crossorigin="anonymous"></script>
+    <!-- Länk till jQuery-pluggin - OnePageNav -->
 	  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-one-page-nav/3.0.0/jquery.nav.min.js"></script>
+    <!-- Länk till jQuery-pluggin - scrollTo -->
     <script src="https://cdn.jsdelivr.net/npm/jquery.scrollto@2.1.2/jquery.scrollTo.min.js"></script>
+    <!-- Länk till jQuery-pluggin - Slick slider -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js"></script>
+    <!-- Länk till jQuery-pluggin - jQuery validate -->
     <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.min.js"></script>
+    <!-- Länk till egen javascriptfil - blandade skript -->
     <script src="js/script.js"></script>
+    <!-- Länk till egen javascriptfil - valideringsskript -->
     <script src="js/validate.js"></script>
   </body>
 </html>

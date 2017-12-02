@@ -1,4 +1,4 @@
-//Validates the form and if validation is succeeded it runs a ajax request
+//Validerar formuläret #hire-form och om det lyckas så kör den en ajaxförfrågan
 $(document).ready(function() {
   $('#hire-form').validate({
     rules: {
@@ -21,14 +21,15 @@ $(document).ready(function() {
 				required: "Enter your email address",
 				email: "Please enter a valid email"
       },
-      subject: "",
+      subject: "", //Sitter ihop med #message så jag lämnade den tom
 			message: {
 				required: "Please, write something about the project",
 				minlength: "You need to enter at least 10 characters",
         maxlength: "You can max enter 500 characters"
 			},
-      accept: ""
+      accept: "" //Kännde inte att det behövdes text för en checkbox
     },
+    //Kör ajaxförfrågan
     submitHandler: function(form) {
       $.ajax({
         url: form.action,
@@ -37,20 +38,20 @@ $(document).ready(function() {
         dataType: "json",
         success: function(response) {
           $("#feedback").html("<p>Thank you for submitting " + response.data.name + "!</p>");
+          //Skriver ut det inhämtade namnet, kändet inte att jag ville göra något mer med den inhämtade datan på klientsidan
         },
         error: function(jqXHR, textStatus, errorThrown) {
           console.log(textStatus, errorThrown);
           $("#feedback").html("<p>There was an error</p>");
         }
       });
-      //event.preventDefault();
     }
   });
 });
 
-//Adds functionality to the reset button
+//Lägger till lite extra funktionalitet till reset-knappen
 $('#clearform').on('click', function () {
-    $("#hire-form").validate().resetForm();
-    $("#feedback").html('');
+    $("#hire-form").validate().resetForm(); //Återställer valideringen
+    $("#feedback").html(''); //Tar bort #feedback
 
  });

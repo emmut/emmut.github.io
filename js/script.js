@@ -1,40 +1,43 @@
 $(document).ready(function() {
 
-  //Fixed nav at certain point
+  //Fixerar menyn på en specifik punkt (60% av webbläsarens bredd)
   $(window).scroll(function () {
 
-    //console.log($(window).scrollTop());
-
     if ($(window).scrollTop() > ($( window ).width() * 0.6) - 2) {
+      //Klasser för att fixera menyn
       $('#main-nav').addClass('nav-fixed');
       $('.wrapper').addClass('margin-fix');
     }
 
     if ($(window).scrollTop() < $( window ).width() * 0.6) {
+      //Klasser för att av-fixera menyn
       $('#main-nav').removeClass('nav-fixed');
       $('.wrapper').removeClass('margin-fix');
     }
 
   });
-  //One page navigation script
+  //OnePageNav skriptet
   $('#main-nav').onePageNav({
   	currentClass: 'current',
   	scrollSpeed: 750,
   	scrollThreshold: 0.1,
   });
 
-  //Header arrow scroll down
+  //Pilen som tar en ned till section#my-work
   $('#arrow a').click(function() {
     $(window).scrollTo($('#my-work'), 750);
   });
 
-  // Main nav mobile menu
+  // Menyn för skärmar mindre än 400px
+  // Blev så många add och remove class att jag la dem i en funktion
   function openClose() {
 
+    //Av och...
     if ($("#bars").hasClass("fa-bars")) {
       $('#bars').removeClass('fa-bars');
       $('#bars').addClass('fa-times');
 
+    //...på för menyknappen
     } else {
       $('#bars').removeClass('fa-times');
       $('#bars').addClass('fa-bars');
@@ -44,16 +47,16 @@ $(document).ready(function() {
     $('#expander').toggleClass('expand');
     $('#main-nav').toggleClass('closed');
   }
-
+  //Här körs funktionen
   $('#bars').click(function() {
     return openClose();
   });
-
+  //Här körs funktionen när man valt något i menyn
   $('nav#main-nav > ul > li > a').click(function() {
     return openClose();
   });
 
-  //Image slider my-work
+  //Slick sliders intällningar (library)
   $('.slider-for').slick({
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -72,7 +75,7 @@ $(document).ready(function() {
     focusOnSelect: true,
   });
 
-  // Character count textarea
+  // Räknar bokstäver i textarea#message (hittat på nätet)
   var text_max = 500;
     $('#textarea_feedback').html(text_max + '/500');
 
@@ -83,7 +86,7 @@ $(document).ready(function() {
       $('#textarea_feedback').html(text_remaining + '/500');
     });
 
-  //Form textarea auto resize
+  // textarea#message blir större när man skriver (hittat på nätet)
   $("#message").keyup(function(e) {
       while($(this).outerHeight() < this.scrollHeight + parseFloat($(this).css("borderTopWidth")) + parseFloat($(this).css("borderBottomWidth"))) {
           $(this).height($(this).height()+1);
@@ -91,7 +94,7 @@ $(document).ready(function() {
   });
 
 
-  //Add class when scrolling from top that animates .bar
+  //Lägger till klass på .bar när man skrollar förbi #resume
   $(window).scroll(function(){
     if($(this).scrollTop()>= $('#resume').offset().top - 250){
         $('.bar-wrapper .bar').addClass('anim-height');
@@ -99,7 +102,5 @@ $(document).ready(function() {
       $('.bar-wrapper .bar').removeClass('anim-height');
     }
   });
-
-
 
 });

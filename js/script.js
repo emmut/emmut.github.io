@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-  //Fixed width at certain point
+  //Fixed nav at certain point
   $(window).scroll(function () {
 
     //console.log($(window).scrollTop());
@@ -16,7 +16,7 @@ $(document).ready(function() {
     }
 
   });
-
+  //One page navigation script
   $('#main-nav').onePageNav({
   	currentClass: 'current',
   	scrollSpeed: 750,
@@ -32,17 +32,17 @@ $(document).ready(function() {
   function openClose() {
 
     if ($("#bars").hasClass("fa-bars")) {
-      $('#bars').removeClass('fa-bars')
-      $('#bars').addClass('fa-times')
+      $('#bars').removeClass('fa-bars');
+      $('#bars').addClass('fa-times');
 
     } else {
-      $('#bars').removeClass('fa-times')
-      $('#bars').addClass('fa-bars')
+      $('#bars').removeClass('fa-times');
+      $('#bars').addClass('fa-bars');
     }
 
-    $('#main-nav').toggleClass('expand')
-    $('#expander').toggleClass('expand')
-    $('#main-nav').toggleClass('closed')
+    $('#main-nav').toggleClass('expand');
+    $('#expander').toggleClass('expand');
+    $('#main-nav').toggleClass('closed');
   }
 
   $('#bars').click(function() {
@@ -53,7 +53,7 @@ $(document).ready(function() {
     return openClose();
   });
 
-  //Slider my-work
+  //Image slider my-work
   $('.slider-for').slick({
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -90,20 +90,15 @@ $(document).ready(function() {
       };
   });
 
-  //Text feedback toogle on focus
-  // function toggleFocus(e){
-  //     if( e.type == 'focusin' )
-  //       $('#textarea_feedback').addClass('hide-ta');
-  //     else
-  //       $('#textarea_feedback').removeClass('hide-ta');
-  // }
 
-  //Add class when scrolling from top
-  var wScroll = $(this).scrollTop();
-
-  if(wScroll > $('#resume').offset().top) {
-    console.log("Whataaaaaap");
-  }
+  //Add class when scrolling from top that animates .bar
+  $(window).scroll(function(){
+    if($(this).scrollTop()>= $('#resume').offset().top - 250){
+        $('.bar-wrapper .bar').addClass('anim-height');
+    } else {
+      $('.bar-wrapper .bar').removeClass('anim-height');
+    }
+  });
 
 
 

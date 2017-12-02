@@ -238,6 +238,9 @@ section {
   margin-top: -5%;
   margin-bottom: 3rem;
 }
+section:last-child {
+  margin-bottom: 10rem;
+}
 
 @media screen and (min-width: 900px) {
   section {
@@ -343,7 +346,7 @@ ul.slick-dots li.slick-active button:before {
 .img-1 {background: url(../img/max/nils2.png)}
 .img-2 {background: url(../img/min/q.jpg)}
 .img-3 {background: url(../img/min/qualisters.jpg)}
-.img-4 {background: url(../img/min/snygg.jpg)}
+.img-4 {background: url(../img/min/muggar-stora.jpg)}
 .img-5 {background: url(../img/min/möggen.jpg)}
 .img-6 {background: url(../img/min/cumulus-2016.jpg)}
 .img-7 {background: url(../img/min/cumulus-2015.jpg)}
@@ -437,11 +440,11 @@ ul.slick-dots li.slick-active button:before {
   justify-content: space-around;
   align-items: flex-end;
   margin: 3rem auto;
+  height: 250px;
 }
 #resume .bar {
   width: 50px;
-  height: 250px;
-  background-color: pink;
+  transition: height 700ms ease-in-out;
 }
 
 #resume .photoshop {
@@ -450,8 +453,11 @@ ul.slick-dots li.slick-active button:before {
   background-repeat: no-repeat;
   background-position: bottom;
   background-size: 70%;
-  height: calc(250px * .9);
-  border-bottom: 5px solid #5DD1FA;
+  height: 0;
+  border-bottom: 7px solid #5DD1FA;
+}
+#resume .photoshop.anim-height {
+  height: calc(250px * .9)
 }
 #resume .illustrator {
   background-color: #F19737;
@@ -459,8 +465,11 @@ ul.slick-dots li.slick-active button:before {
   background-repeat: no-repeat;
   background-position: bottom;
   background-size: 70%;
-  height: calc(250px * .4);
+  height: 0;
   border-bottom: 7px solid #F19737;
+}
+#resume .illustrator.anim-height {
+  height: calc(250px * .5)
 }
 #resume .indesign {
   background-color: #ED68A0;
@@ -468,8 +477,11 @@ ul.slick-dots li.slick-active button:before {
   background-repeat: no-repeat;
   background-position: bottom;
   background-size: 70%;
-  height: calc(250px * .7);
+  height: 0;
   border-bottom: 7px solid #ED68A0;
+}
+#resume .indesign.anim-height {
+  height: calc(250px * .7)
 }
 #resume .premiere {
   background-color: #DE94F9;
@@ -477,8 +489,11 @@ ul.slick-dots li.slick-active button:before {
   background-repeat: no-repeat;
   background-position: bottom;
   background-size: 70%;
-  height: calc(250px * .4);
+  height: 0;
   border-bottom: 7px solid #DE94F9;
+}
+#resume .premiere.anim-height {
+  height: calc(250px * .4)
 }
 #resume .after-effects {
   background-color: #D2ACF9;
@@ -486,37 +501,65 @@ ul.slick-dots li.slick-active button:before {
   background-repeat: no-repeat;
   background-position: bottom;
   background-size: 70%;
-  height: calc(250px * .2);
+  height: 0;
   border-bottom: 7px solid #D2ACF9;
+}
+#resume .after-effects.anim-height {
+  height: calc(250px * .2)
 }
 #resume .web-design {
   background-color: #DDC537;
   background-image: url(../img/adobe/webdesign.svg);
   background-repeat: no-repeat;
-  background-position: center 97%;
+  background-position: bottom;
   background-size: 70%;
-  height: calc(250px * .3);
+  height: 0;
   border-bottom: 7px solid #DDC537;
+}
+#resume .web-design.anim-height {
+  height: calc(250px * .4);
 }
 #resume .photography {
   background-color: #C4CACF;
   background-image: url(../img/adobe/photography.svg);
   background-repeat: no-repeat;
-  background-position: center 97%;
+  background-position: bottom;
   background-size: 70%;
-  height: calc(250px * .5);
+  height: 0;
   border-bottom: 7px solid #C4CACF;
+}
+#resume .photography.anim-height {
+  height: calc(250px * .5);
 }
 #resume .cinematography {
   background-color: #586975;
   background-image: url(../img/adobe/cinematography.svg);
   background-repeat: no-repeat;
-  background-position: center 97%;
+  background-position: bottom;
   background-size: 70%;
-  height: calc(250px * .3);
+  height: 0;
   border-bottom: 7px solid #586975;
 }
+#resume .cinematography.anim-height {
+  height: calc(250px * .3);
+}
 
+#resume p {
+  margin-bottom: 1rem;
+}
+@media screen and (min-width: 700px) {
+  #resume p {
+    width: 50%;
+  }
+  #resume p:nth-child(3) {
+    float: left;
+    padding-right: .5rem;
+  }
+  #resume p:nth-child(4) {
+    float: right;
+    padding-left: .5rem;
+  }
+}
 /*--------------------------------------------------------------
 # Section 4 - Hire me
 --------------------------------------------------------------*/
@@ -524,8 +567,7 @@ ul.slick-dots li.slick-active button:before {
 
 #hire-form {
   max-width: 600px;
-  margin: auto;
-  margin-bottom: 10rem;
+  margin: 2rem auto 1rem auto;
   padding: 5% 0 5% 0;
   position: relative;
 }
@@ -561,6 +603,14 @@ ul.slick-dots li.slick-active button:before {
   border: none;
   padding: 0 5% 0 5%;
 }
+#hire p input[id="subject"] {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+#hire .ta textarea {
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+}
 #hire p input::placeholder,
 #hire .ta textarea::placeholder {
   font-family: "Raleway", sans-serif;
@@ -581,6 +631,18 @@ ul.slick-dots li.slick-active button:before {
   resize: none;
   min-height: 100px;
 }
+
+#hire .check-box {
+  width: 100%;
+  float: right;
+  text-align: right;
+  margin-top: 1rem;
+  margin-right: .3rem;
+}
+#hire input[type="checkbox"].error {
+  outline: 1px solid #D01E32;
+}
+
 
 #hire p label.error,
 #hire .ta label.error {
@@ -608,7 +670,7 @@ ul.slick-dots li.slick-active button:before {
   margin: auto;
   clear: both;
   float: right;
-  margin-top: 5%;
+  margin-top: 1rem;
 }
 
 #hire .button {
@@ -650,6 +712,10 @@ ul.slick-dots li.slick-active button:before {
 
 #textarea_feedback.hide-ta {
   display: none !important;
+}
+
+#feedback p {
+  text-align: center;
 }
 
 /*--------------------------------------------------------------

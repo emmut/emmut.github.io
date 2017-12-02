@@ -7,11 +7,13 @@ $(document).ready(function() {
         required: true,
         email: true,
       },
+      subject: "required",
 			message: {
 				required: true,
 				minlength: 10,
         maxlength: 500,
 			},
+      accept: "required"
 		},
 		messages: {
 			name: "Please write your name!",
@@ -19,11 +21,13 @@ $(document).ready(function() {
 				required: "Enter your email address",
 				email: "Please enter a valid email"
       },
+      subject: "",
 			message: {
 				required: "Please, write something about the project",
 				minlength: "You need to enter at least 10 characters",
         maxlength: "You can max enter 500 characters"
-			}
+			},
+      accept: ""
     },
     submitHandler: function(form) {
       $.ajax({

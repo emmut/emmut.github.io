@@ -27,23 +27,23 @@ article {
 h1, h2, h3, h4, h5, h6 {font-family: "Oswald", sans-serif;}
 
 h1 {
-  font-size: 5em;
+  font-size: 5rem;
   text-transform: uppercase;
 }
 h2 {
-  font-size: 4em;
+  font-size: 4rem;
   padding: 2.5% 0 2% 0;
   text-transform: uppercase;
 }
 h3 {
-  font-size: 3em;
+  font-size: 3rem;
   text-transform: uppercase;
 }
-h4 {font-size: 2em;}
-h5 {font-size: 1em;}
-h6 {font-size: .5em;}
+h4 {font-size: 2rem;}
+h5 {font-size: 1rem;}
+h6 {font-size: .5rem;}
 p {
-  font-size: .8em;
+  font-size: .8rem;
   font-family: "Raleway", sans-serif;
   line-height: 1.2rem;
 }
@@ -51,6 +51,12 @@ p {
 p strong {
   font-family: "Raleway", sans-serif;
   font-weight: bold;
+}
+
+label {
+  font-size: .8rem;
+  font-family: "Raleway", sans-serif;
+  line-height: 1.2rem;
 }
 
 @media screen and (max-width: 400px) {
@@ -92,6 +98,7 @@ p strong {
     background-position: center top;
     background-repeat: no-repeat;
     background-size: cover;
+
 }
 
 #header i.fa.fa-angle-down {
@@ -118,7 +125,6 @@ p strong {
 #main-nav {
   height: 40px;
   display: flex;
-  align-items: space-between;
   justify-content: center;
   position: relative;
   z-index: 999;
@@ -230,6 +236,7 @@ nav.nav-fixed {
 section {
   padding-top: 10%;
   margin-top: -5%;
+  margin-bottom: 3rem;
 }
 
 @media screen and (min-width: 900px) {
@@ -412,35 +419,104 @@ ul.slick-dots li.slick-active button:before {
   margin-bottom: 1rem;
 }
 
-#about .img-wrapper {
-  display: inline-block;
-  position: relative;
-	width: 30%;
-  float: right;
-  border-radius: 50%;
-  overflow: hidden;
-}
-#about .img-wrapper:before {
-  content: "";
-	display: block;
-	padding-top: 100%; 	/* initial ratio of 1:1*/
-}
-
 #about img {
-  position: absolute;
-	top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-
-  margin: auto;
-  width: 116%;
+  position: relative;
+  width: 30%;
+  max-width: 250px;
+  border-radius: 50%;
+  float: right;
 }
 
 
 /*--------------------------------------------------------------
 # Section 3 - Resumé
 --------------------------------------------------------------*/
+#resume .bar-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  margin: 3rem auto;
+}
+#resume .bar {
+  width: 50px;
+  height: 250px;
+  background-color: pink;
+}
+
+#resume .photoshop {
+  background-color: #5DD1FA;
+  background-image: url(../img/adobe/photoshop.svg);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: 70%;
+  height: calc(250px * .9);
+  border-bottom: 5px solid #5DD1FA;
+}
+#resume .illustrator {
+  background-color: #F19737;
+  background-image: url(../img/adobe/illustrator.svg);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: 70%;
+  height: calc(250px * .4);
+  border-bottom: 7px solid #F19737;
+}
+#resume .indesign {
+  background-color: #ED68A0;
+  background-image: url(../img/adobe/indesign.svg);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: 70%;
+  height: calc(250px * .7);
+  border-bottom: 7px solid #ED68A0;
+}
+#resume .premiere {
+  background-color: #DE94F9;
+  background-image: url(../img/adobe/premiere.svg);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: 70%;
+  height: calc(250px * .4);
+  border-bottom: 7px solid #DE94F9;
+}
+#resume .after-effects {
+  background-color: #D2ACF9;
+  background-image: url(../img/adobe/aftereffects.svg);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: 70%;
+  height: calc(250px * .2);
+  border-bottom: 7px solid #D2ACF9;
+}
+#resume .web-design {
+  background-color: #DDC537;
+  background-image: url(../img/adobe/webdesign.svg);
+  background-repeat: no-repeat;
+  background-position: center 97%;
+  background-size: 70%;
+  height: calc(250px * .3);
+  border-bottom: 7px solid #DDC537;
+}
+#resume .photography {
+  background-color: #C4CACF;
+  background-image: url(../img/adobe/photography.svg);
+  background-repeat: no-repeat;
+  background-position: center 97%;
+  background-size: 70%;
+  height: calc(250px * .5);
+  border-bottom: 7px solid #C4CACF;
+}
+#resume .cinematography {
+  background-color: #586975;
+  background-image: url(../img/adobe/cinematography.svg);
+  background-repeat: no-repeat;
+  background-position: center 97%;
+  background-size: 70%;
+  height: calc(250px * .3);
+  border-bottom: 7px solid #586975;
+}
+
 /*--------------------------------------------------------------
 # Section 4 - Hire me
 --------------------------------------------------------------*/
@@ -449,6 +525,7 @@ ul.slick-dots li.slick-active button:before {
 #hire-form {
   max-width: 600px;
   margin: auto;
+  margin-bottom: 10rem;
   padding: 5% 0 5% 0;
   position: relative;
 }
@@ -467,10 +544,6 @@ ul.slick-dots li.slick-active button:before {
   margin-bottom: 3rem;
 }
 
-#hire p:last-child {
-
-}
-
 #textarea_feedback {
   font: 0.6rem "Oswald", sans-serif;
   color: #444;
@@ -479,7 +552,7 @@ ul.slick-dots li.slick-active button:before {
 }
 
 #hire p input,
-#hire p textarea {
+#hire .ta textarea {
   font: .7rem "Raleway", sans-serif;
   float: right;
   width: 70%;
@@ -489,33 +562,43 @@ ul.slick-dots li.slick-active button:before {
   padding: 0 5% 0 5%;
 }
 #hire p input::placeholder,
-#hire p textarea::placeholder {
+#hire .ta textarea::placeholder {
   font-family: "Raleway", sans-serif;
   color: #777;
 }
 
-#hire p textarea {
+#hire .ta {
+  position: relative;
+}
+
+#hire .ta p {
+  margin: 0;
+  display: initial;
+}
+
+#hire .ta textarea {
   padding: 9px 5% 5% 5%;
   resize: none;
   min-height: 100px;
 }
 
 #hire p label.error,
-#hire p label.error {
+#hire .ta label.error {
   color: #D01E32;
 }
 
 #hire p input.error,
-#hire p textarea.error {
+#hire .ta textarea.error {
   border: 1px solid #D01E32;
   background-color: #DF8D95;
 }
 #hire p input.error::placeholder,
-#hire p textarea.error::placeholder {
+#hire .ta textarea.error::placeholder {
   color: #444;
 }
 
-#hire p label.error {
+#hire p label.error,
+#hire .ta label.error {
   position: absolute;
   right: 15px;
   bottom: 33px;
@@ -529,7 +612,7 @@ ul.slick-dots li.slick-active button:before {
 }
 
 #hire .button {
-  font-family: 12px 'Oswald', Arial, sans-serif;
+  font: .7rem 'Raleway', sans-serif;
   margin: 10px auto;
   border-radius: 15px;
   background-color: #E9E9E9;

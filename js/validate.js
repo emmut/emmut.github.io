@@ -1,3 +1,4 @@
+//Validates the form and if validation is succeeded it runs a ajax request
 $(document).ready(function() {
   $('#hire-form').validate({
     rules: {
@@ -26,26 +27,26 @@ $(document).ready(function() {
     },
     submitHandler: function(form) {
       $.ajax({
-          url: form.action,
-          type: form.method,
-          data: $(form).serialize(),
-          dataType: "json",
-          success: function(response) {
-            $("#feedback").html("<p>Thank you for submitting " + response.data.name + "!</p>");
-          },
-          error: function(jqXHR, textStatus, errorThrown) {
-            console.log(textStatus, errorThrown);
-            $("#feedback").html("<p>There was an error</p>");
-          }
+        url: form.action,
+        type: form.method,
+        data: $(form).serialize(),
+        dataType: "json",
+        success: function(response) {
+          $("#feedback").html("<p>Thank you for submitting " + response.data.name + "!</p>");
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+          console.log(textStatus, errorThrown);
+          $("#feedback").html("<p>There was an error</p>");
+        }
       });
-      event.preventDefault();
+      //event.preventDefault();
     }
   });
 });
 
+//Adds functionality to the reset button
 $('#clearform').on('click', function () {
-    $('#message').val('');
     $("#hire-form").validate().resetForm();
-    $("#feedback").html("");
+    $("#feedback").html('');
 
  });

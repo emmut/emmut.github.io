@@ -91,12 +91,20 @@ $(document).ready(function() {
   });
 
   //Text feedback toogle on focus
+  // function toggleFocus(e){
+  //     if( e.type == 'focusin' )
+  //       $('#textarea_feedback').addClass('hide-ta');
+  //     else
+  //       $('#textarea_feedback').removeClass('hide-ta');
+  // }
 
-  function toggleFocus(e){
-      if( e.type == 'focusin' )
-        $('#textarea_feedback').addClass('hide-ta');
-      else
-        $('#textarea_feedback').removeClass('hide-ta');
+  //Add class when scrolling from top
+  var wScroll = $(this).scrollTop();
+
+  if(wScroll > $('#resume').offset().top) {
+    console.log("Whataaaaaap");
   }
+
+
 
 });

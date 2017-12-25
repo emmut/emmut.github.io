@@ -58,6 +58,7 @@ $(document).ready(function() {
 
   //Slick sliders intällningar (library)
   $('.slider-for').slick({
+    lazyLoad: 'progressive',
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: false,

@@ -40,8 +40,8 @@ article {
   Mellanrum för de olika sektionerna. Paddingen och marginen motverkar varandra, detta för att juster vart onePageNav ska skrolla till
 */
 section {
-  padding-top: 10%;
-  margin-top: -5%;
+  padding-top: 15%;
+  margin-top: -7%;
   margin-bottom: 3rem;
 }
 section:last-child {
@@ -49,19 +49,19 @@ section:last-child {
 }
 
 /*
-  Justerar mellanrummet på mindre skärmar
+  Justerar mellanrummet på större skärmar
 */
 @media screen and (min-width: 900px) {
   section {
-    padding-top: 2%;
-    margin-top: 1%;
+    padding-top: 3%;
+    margin-top: 1.5%;
   }
 }
 
 section>h2,
 section>h3,
 section>h4 {
-  padding-bottom: 0.5rem;
+  padding-bottom: 1.5rem;
 }
 
 /*
@@ -88,11 +88,12 @@ h1 {
 }
 h2 {
   font-size: 4rem;
-  padding: 2.5% 0 2% 0;
+  padding: 2.5% 0 5% 0;
   text-transform: uppercase;
 }
 h3 {
   font-size: 3rem;
+  padding: 2.5% 0 5% 0;
   text-transform: uppercase;
 }
 h4 {font-size: 2rem;}
@@ -137,20 +138,20 @@ Sätter typsnittsgraden lägre och har centrerat texteb på enheter med mindre s
   I den här sektionen sätter jag stilarna logotypen, header-bilden och pilen (som tar en ned till första sektionen)
 */
 #logo {
-  width: 100px;
-  height: 100px;
-  background-color: pink;
+  width: 30%;
+  height: 30%;
   position: absolute;
-  top: 0;
+  top: 35%;
   left: 50%;
-  transform: translate(-50%, 0);
-  -ms-transform: translate(-50%, 0);
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
   z-index: 1;
 }
 
 /*
   Headerbildens höjd är 60% av webbläsarens bredd
 */
+
 #header {
   max-height: 60vw;
   overflow: hidden;
@@ -166,7 +167,22 @@ Sätter typsnittsgraden lägre och har centrerat texteb på enheter med mindre s
     background-attachment: fixed;
     background-position: center top;
     background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     background-size: cover;
+}
+
+/* Fixar fel i background-size: cover på ipad */
+@media all and (device-width: 768px) and (device-height: 1024px) and (orientation:portrait) {
+  #header.parallax {
+       background-attachment: scroll;
+   }
+}
+@media all and (device-width: 768px) and (device-height: 1024px) and (orientation:landscape) {
+  #header.parallax {
+       background-attachment: scroll;
+   }
 }
 
 #header i.fa.fa-angle-down {
@@ -221,7 +237,7 @@ Sätter typsnittsgraden lägre och har centrerat texteb på enheter med mindre s
   height: 40px;
   border-right: 1px solid #555;
   text-transform: uppercase;
-  font: 1rem 'Oswald', san-serif;
+  font: 1rem 'Oswald', sans-serif;
   cursor: pointer;
 }
 
@@ -324,6 +340,10 @@ nav.nav-fixed {
 /*--------------------------------------------------------------
 # Section 1 - My Work
 --------------------------------------------------------------*/
+#my-work h2 {
+  text-align: center;
+}
+
 /*
   Stilar för första sektionen. Börjar med justeringar av slick sliders egna css
 */
@@ -335,6 +355,12 @@ nav.nav-fixed {
 /*
   .slick-track och .slick-nav är för bilderna som ligger ovanför huvudbilden - navigeringsslidern
 */
+
+.slick-wrap {
+  max-width: 900px;
+  margin: auto;
+}
+
 .slider-nav .slick-track img {
   filter: brightness(0.4);
   transition: filter 200ms ease-in-out;
@@ -361,6 +387,7 @@ nav.nav-fixed {
 
 .slider-nav {
   height: 20vw;
+  max-height: 229px;
 }
 
 .slider-nav img {
@@ -738,8 +765,8 @@ ul.slick-dots li.slick-active button:before {
   border-top-left-radius: 0;
 }
 
-#hire p input:placeholder-shown,
-#hire .ta textarea:placeholder-shown {
+#hire p input,
+#hire .ta textarea {
   font-family: "Raleway", sans-serif;
   color: #777;
 }
@@ -784,8 +811,8 @@ ul.slick-dots li.slick-active button:before {
   border: 1px solid #D01E32;
   background-color: #DF8D95;
 }
-#hire p input.error:placeholder-shown,
-#hire .ta textarea.error:placeholder-shown {
+#hire p input.error,
+#hire .ta textarea.error {
   color: #444;
 }
 

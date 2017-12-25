@@ -29,21 +29,21 @@ $(document).ready(function() {
 			},
       accept: ""
     },
-    submitHandler: function(form) {
-      $.ajax({
-        url: form.action,
-        type: form.method,
-        data: $(form).serialize(),
-        dataType: "json",
-        success: function(response) {
-          $("#feedback").html("<p>Thank you for submitting " + response.data.name + "!</p>");
-        },
-        error: function(jqXHR, textStatus, errorThrown) {
-          console.log(textStatus, errorThrown);
-          $("#feedback").html("<p>There was an error</p>");
-        }
-      });
-      //event.preventDefault();
+    // submitHandler: function(form) {
+    //   $.ajax({
+    //     url: form.action,
+    //     type: form.method,
+    //     data: $(form).serialize(),
+    //     dataType: "json",
+    //     success: function(response) {
+    //       $("#feedback").html("<p>Thank you for submitting " + response.data.name + "!</p>");
+    //     },
+    //     error: function(jqXHR, textStatus, errorThrown) {
+    //       console.log(textStatus, errorThrown);
+    //       $("#feedback").html("<p>There was an error</p>");
+    //     }
+    //});
+    //  event.preventDefault();
     }
   });
 });

@@ -74,16 +74,16 @@ label {
 # Header
 --------------------------------------------------------------*/
 #logo {
-  width: 100px;
-  height: 100px;
-  background-color: pink;
+  width: 30%;
+  height: 30%;
   position: absolute;
-  top: 0;
+  top: 35%;
   left: 50%;
-  transform: translate(-50%, 0);
-  -ms-transform: translate(-50%, 0);
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
   z-index: 1;
 }
+
 
 #header {
   max-height: 60vw;

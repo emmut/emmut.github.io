@@ -34,13 +34,13 @@ $(document).ready(function() {
         url: form.action,
         type: form.method,
         dataType: "json",
-        success: function(response) {
-          $("#feedback").html("<p>Thank you for submitting!</p>");
-        },
-        error: function(jqXHR, textStatus, errorThrown) {
-          console.log(textStatus, errorThrown);
-          $("#feedback").html("<p>There was an error</p>");
-        }
+        // success: function(response) {
+        //   $("#feedback").html("<p>Thank you for submitting!</p>");
+        // },
+        // error: function(jqXHR, textStatus, errorThrown) {
+        //   console.log(textStatus, errorThrown);
+        //   $("#feedback").html("<p>There was an error</p>");
+        // }
     });
     //  event.preventDefault();
     }

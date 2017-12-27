@@ -31,8 +31,9 @@ $(document).ready(function() {
     },
     submitHandler: function(form) {
       $.ajax({
-        url: form.action,
-        type: form.method,
+        url: "https://formspree.io/e.jansson@icloud.com",
+        type: "POST",
+        data: {message: "hello!"},
         dataType: "json",
         // success: function(response) {
         //   $("#feedback").html("<p>Thank you for submitting!</p>");

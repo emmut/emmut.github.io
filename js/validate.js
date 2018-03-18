@@ -30,19 +30,20 @@ $(document).ready(function() {
       accept: ""
     },
     submitHandler: function(form) {
-      $.ajax({
-        url: "https://formspree.io/e.jansson@icloud.com",
-        type: "POST",
-        data: {message: "hello!"},
-        dataType: "json",
-        // success: function(response) {
-        //   $("#feedback").html("<p>Thank you for submitting!</p>");
-        // },
-        // error: function(jqXHR, textStatus, errorThrown) {
-        //   console.log(textStatus, errorThrown);
-        //   $("#feedback").html("<p>There was an error</p>");
-        // }
-    });
+      $(form).ajaxSubmit();
+    //   $.ajax({
+    //     url: "https://formspree.io/e.jansson@icloud.com",
+    //     type: "POST",
+    //     data: {message: "hello!"},
+    //     dataType: "json",
+    //     // success: function(response) {
+    //     //   $("#feedback").html("<p>Thank you for submitting!</p>");
+    //     // },
+    //     // error: function(jqXHR, textStatus, errorThrown) {
+    //     //   console.log(textStatus, errorThrown);
+    //     //   $("#feedback").html("<p>There was an error</p>");
+    //     // }
+    // });
     //  event.preventDefault();
     }
   });

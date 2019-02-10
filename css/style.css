@@ -273,7 +273,7 @@ ul.slick-dots li button:before,
 ul.slick-dots li.slick-active button:before {
   color: white; }
 
-@media screen and (max-width: 400px) {
+/* @media screen and (max-width: 400px) {
   .slick-next:before,
   .slick-prev:before,
   .slick-arrow,
@@ -281,7 +281,7 @@ ul.slick-dots li.slick-active button:before {
   ul.slick-dots li.slick-active button:before,
   ul.slick-dots {
     display: none;
-    pointer-events: none; } }
+    pointer-events: none; } } */
 
 /*--------------------------------------------------------------
 ## My work more
@@ -408,7 +408,7 @@ ul.slick-dots li.slick-active button:before {
   border-bottom: 7px solid #F19737; }
 
 #resume .illustrator.anim-height {
-  height: calc(250px * .5); }
+  height: calc(250px * .7); }
 
 #resume .indesign {
   background-color: #ED68A0;
@@ -432,7 +432,7 @@ ul.slick-dots li.slick-active button:before {
   border-bottom: 7px solid #DE94F9; }
 
 #resume .premiere.anim-height {
-  height: calc(250px * .4); }
+  height: calc(250px * .5); }
 
 #resume .after-effects {
   background-color: #D2ACF9;
@@ -444,7 +444,7 @@ ul.slick-dots li.slick-active button:before {
   border-bottom: 7px solid #D2ACF9; }
 
 #resume .after-effects.anim-height {
-  height: calc(250px * .2); }
+  height: calc(250px * .4); }
 
 #resume .web-design {
   background-color: #DDC537;
@@ -456,7 +456,7 @@ ul.slick-dots li.slick-active button:before {
   border-bottom: 7px solid #DDC537; }
 
 #resume .web-design.anim-height {
-  height: calc(250px * .4); }
+  height: calc(250px * .5); }
 
 #resume .photography {
   background-color: #C4CACF;

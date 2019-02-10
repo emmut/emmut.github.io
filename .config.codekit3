@@ -7,13 +7,20 @@
 		"uuidString": "9A35940A-D2DD-417E-80DF-5533135A7587"
 		}
 	],
-"creatorBuild": "26148",
+"creatorBuild": "26680",
 "files": {
 	"\/.gitignore": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/.gitignore",
+		"oF": 0
+		},
+	"\/css\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/css\/index.html",
 		"oF": 0
 		},
 	"\/css\/reset.css": {
@@ -76,6 +83,13 @@
 		"plM": 3758088159,
 		"prP": 0
 		},
+	"\/img\/adobe\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/img\/adobe\/index.html",
+		"oF": 0
+		},
 	"\/img\/adobe\/photography.svg": {
 		"ft": 2097152,
 		"miP": 0,
@@ -127,6 +141,24 @@
 		"oT": 1,
 		"q": 100
 		},
+	"\/img\/grump.jpg": {
+		"ft": 16384,
+		"iS": 429777,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/img\/grump.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/img\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/img\/index.html",
+		"oF": 0
+		},
 	"\/img\/logo.svg": {
 		"ft": 2097152,
 		"miP": 0,
@@ -137,9 +169,20 @@
 		"plM": 3758088159,
 		"prP": 0
 		},
+	"\/img\/logo2.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 0,
+		"oAP": "\/img\/logo2.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
 	"\/img\/max\/bunker.jpg": {
 		"ft": 16384,
 		"iS": 342402,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/img\/max\/bunker.jpg",
 		"oF": 0,
@@ -150,6 +193,7 @@
 	"\/img\/max\/cumulus-2015.jpg": {
 		"ft": 16384,
 		"iS": 415404,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/img\/max\/cumulus-2015.jpg",
 		"oF": 0,
@@ -160,6 +204,7 @@
 	"\/img\/max\/cumulus-2016.jpg": {
 		"ft": 16384,
 		"iS": 268182,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/img\/max\/cumulus-2016.jpg",
 		"oF": 0,
@@ -170,6 +215,7 @@
 	"\/img\/max\/emil.jpg": {
 		"ft": 16384,
 		"iS": 116674,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/img\/max\/emil.jpg",
 		"oF": 0,
@@ -180,6 +226,7 @@
 	"\/img\/max\/hötorget.jpg": {
 		"ft": 16384,
 		"iS": 100683,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/img\/max\/hötorget.jpg",
 		"oF": 0,
@@ -187,9 +234,17 @@
 		"opt": 1,
 		"q": 100
 		},
+	"\/img\/max\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/img\/max\/index.html",
+		"oF": 0
+		},
 	"\/img\/max\/lake-mckenzie2_opt.jpg": {
 		"ft": 16384,
 		"iS": 643917,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/img\/max\/lake-mckenzie2_opt.jpg",
 		"oF": 0,
@@ -200,6 +255,7 @@
 	"\/img\/max\/möggen.jpg": {
 		"ft": 16384,
 		"iS": 125476,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/img\/max\/möggen.jpg",
 		"oF": 0,
@@ -210,6 +266,7 @@
 	"\/img\/max\/muggar-stora.jpg": {
 		"ft": 16384,
 		"iS": 102336,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/img\/max\/muggar-stora.jpg",
 		"oF": 0,
@@ -242,6 +299,7 @@
 	"\/img\/max\/q.jpg": {
 		"ft": 16384,
 		"iS": 78267,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/img\/max\/q.jpg",
 		"oF": 0,
@@ -252,6 +310,7 @@
 	"\/img\/max\/qualisters.jpg": {
 		"ft": 16384,
 		"iS": 158730,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/img\/max\/qualisters.jpg",
 		"oF": 0,
@@ -262,6 +321,7 @@
 	"\/img\/max\/robo-byronbay.jpg": {
 		"ft": 16384,
 		"iS": 600105,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/img\/max\/robo-byronbay.jpg",
 		"oF": 0,
@@ -272,6 +332,7 @@
 	"\/img\/max\/snygg.jpg": {
 		"ft": 16384,
 		"iS": 326635,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/img\/max\/snygg.jpg",
 		"oF": 0,
@@ -282,6 +343,7 @@
 	"\/img\/min\/bunker.jpg": {
 		"ft": 16384,
 		"iS": 377056,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/img\/min\/bunker.jpg",
 		"oF": 0,
@@ -292,6 +354,7 @@
 	"\/img\/min\/cumulus-2015.jpg": {
 		"ft": 16384,
 		"iS": 135568,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/img\/min\/cumulus-2015.jpg",
 		"oF": 0,
@@ -302,6 +365,7 @@
 	"\/img\/min\/cumulus-2016.jpg": {
 		"ft": 16384,
 		"iS": 139476,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/img\/min\/cumulus-2016.jpg",
 		"oF": 0,
@@ -312,6 +376,7 @@
 	"\/img\/min\/hötorget.jpg": {
 		"ft": 16384,
 		"iS": 69865,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/img\/min\/hötorget.jpg",
 		"oF": 0,
@@ -319,9 +384,17 @@
 		"opt": 1,
 		"q": 100
 		},
+	"\/img\/min\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/img\/min\/index.html",
+		"oF": 0
+		},
 	"\/img\/min\/lake-mckenzie2_opt.jpg": {
 		"ft": 16384,
 		"iS": 151304,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/img\/min\/lake-mckenzie2_opt.jpg",
 		"oF": 0,
@@ -332,6 +405,7 @@
 	"\/img\/min\/möggen.jpg": {
 		"ft": 16384,
 		"iS": 99601,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/img\/min\/möggen.jpg",
 		"oF": 0,
@@ -342,6 +416,7 @@
 	"\/img\/min\/muggar-stora.jpg": {
 		"ft": 16384,
 		"iS": 84571,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/img\/min\/muggar-stora.jpg",
 		"oF": 0,
@@ -374,6 +449,7 @@
 	"\/img\/min\/q.jpg": {
 		"ft": 16384,
 		"iS": 78254,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/img\/min\/q.jpg",
 		"oF": 0,
@@ -384,6 +460,7 @@
 	"\/img\/min\/qualisters.jpg": {
 		"ft": 16384,
 		"iS": 59771,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/img\/min\/qualisters.jpg",
 		"oF": 0,
@@ -394,6 +471,7 @@
 	"\/img\/min\/robo-byronbay.jpg": {
 		"ft": 16384,
 		"iS": 364512,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/img\/min\/robo-byronbay.jpg",
 		"oF": 0,
@@ -404,6 +482,7 @@
 	"\/img\/min\/snygg.jpg": {
 		"ft": 16384,
 		"iS": 326635,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/img\/min\/snygg.jpg",
 		"oF": 0,
@@ -414,6 +493,7 @@
 	"\/img\/thumb\/bunker.jpg": {
 		"ft": 16384,
 		"iS": 76871,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/img\/thumb\/bunker.jpg",
 		"oF": 0,
@@ -424,6 +504,7 @@
 	"\/img\/thumb\/cumulus-2015.jpg": {
 		"ft": 16384,
 		"iS": 68321,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/img\/thumb\/cumulus-2015.jpg",
 		"oF": 0,
@@ -434,6 +515,7 @@
 	"\/img\/thumb\/cumulus-2016.jpg": {
 		"ft": 16384,
 		"iS": 57933,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/img\/thumb\/cumulus-2016.jpg",
 		"oF": 0,
@@ -444,6 +526,7 @@
 	"\/img\/thumb\/hötorget.jpg": {
 		"ft": 16384,
 		"iS": 37932,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/img\/thumb\/hötorget.jpg",
 		"oF": 0,
@@ -451,9 +534,17 @@
 		"opt": 1,
 		"q": 100
 		},
+	"\/img\/thumb\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/img\/thumb\/index.html",
+		"oF": 0
+		},
 	"\/img\/thumb\/lake-mckenzie2_opt.jpg": {
 		"ft": 16384,
 		"iS": 55542,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/img\/thumb\/lake-mckenzie2_opt.jpg",
 		"oF": 0,
@@ -464,6 +555,7 @@
 	"\/img\/thumb\/nils1.jpg": {
 		"ft": 16384,
 		"iS": 58618,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/img\/thumb\/nils1.jpg",
 		"oF": 0,
@@ -485,6 +577,7 @@
 	"\/img\/thumb\/qualisters.jpg": {
 		"ft": 16384,
 		"iS": 37217,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/img\/thumb\/qualisters.jpg",
 		"oF": 0,
@@ -495,6 +588,7 @@
 	"\/img\/thumb\/robo-byronbay.jpg": {
 		"ft": 16384,
 		"iS": 133367,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/img\/thumb\/robo-byronbay.jpg",
 		"oF": 0,
@@ -507,6 +601,13 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/index.html",
+		"oF": 0
+		},
+	"\/js\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/js\/index.html",
 		"oF": 0
 		},
 	"\/js\/script.js": {
@@ -536,9 +637,10 @@
 	},
 "projectAttributes": {
 	"creationDate": 535908582,
-	"displayValue": "emmut",
+	"displayValue": "emmut.github.io",
 	"displayValueWasSetByUser": 0,
 	"iconImageName": "meme-grumpy",
+	"iconImageWasSetByUser": 0,
 	"lastBuiltDate": 535909483
 	},
 "projectSettings": {
@@ -547,6 +649,7 @@
 	"animateCSSInjections": 1,
 	"autoBuildNewItems": 1,
 	"autoprefixerBrowserString": "> 1%, last 2 versions, Firefox ESR, Opera 12.1",
+	"autoprefixerEnableIEGrid": 0,
 	"babelAuxiliaryCommentAfter": "",
 	"babelAuxiliaryCommentBefore": "",
 	"babelConfigFileHandlingType": 0,
@@ -1110,6 +1213,10 @@
 		"id-match": {
 			"active": 0,
 			"optionString": "'^[a-z]+([A-Z][a-z]+)*$', {'properties': false, 'onlyDeclarations': true}"
+			},
+		"implicit-arrow-linebreak": {
+			"active": 0,
+			"optionString": "'beside'"
 			},
 		"indent": {
 			"active": 0,
@@ -2337,6 +2444,7 @@
 		"autoOutputPathReplace1": "",
 		"autoOutputPathReplace2": "",
 		"autoOutputPathStyle": 0,
+		"outputFormat": 0,
 		"quality": 100
 		},
 	"languageDefaultsJS": {

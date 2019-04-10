@@ -216,10 +216,10 @@
             <textarea id="message" name="message" maxlength="500" placeholder="Write about your project..." onKeyPress="removeHide()" onfocusout="addHide()"></textarea>
           </div>
           <div id="textarea_feedback" class="hide-ta"></div>
-          <!-- <div class="check-box">
-            <input id="accept" type="checkbox" name="accept" value="yes">
-            <label for="accept">I accept the terms</label>
-          </div> -->
+          <div class="check-box">
+            <input id="accept" type="checkbox" name="accept" value="yes" reuired>
+            <label for="accept">I accept that this information is sent to e.jansson@icloud.com via <a href="https://formspree.io/">formspree</a></label>
+          </div>
           <div class="buttons">
             <input id="clearform" class="button btn-error" type="reset" value="Reset">
             <input class="button btn-success" type="submit" value="Submit">
@@ -233,9 +233,6 @@
 
   <footer id="footer-nav">
     <ul>
-      <li><a href="#">Terms &amp; Conditions</a></li>
-      <li><a href="#">License</a></li>
-      <li><a href="#">Policy</a></li>
       <li><a href="#header">Home</a></li>
       <li><a href="#my-work">My Work</a></li>
       <li><a href="#about">About Me</a></li>
